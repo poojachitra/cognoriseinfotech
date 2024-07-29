@@ -1,0 +1,105 @@
+:root{
+    
+    --bg-color:hsl(60, 15%, 90%);
+    --text-color:rgb(221, 154, 166);
+    --keypad2-color:#DA7297;
+    --keypad-color:#9a73d9;
+    
+
+  /*--bg-color:#000000;
+    --text-color:rgb(221, 154, 166);
+    --keypad-color:#DA7297;
+    --keypad-color:#E90074;
+*/
+}
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+}
+.calc{
+    aspect-ratio: 10/16;
+    width:100%;
+    max-width: 350px;
+    border-radius:20px;
+    padding:20px;
+    background-color: var(--bg-color);
+    box-shadow: 0px 0px 10px #55555c;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.calc .display{
+      height: 20%;
+    align-items: right;
+     background-color:var(--bg-color);
+     border-radius: 20px;
+     padding:10px;
+     box-shadow: 0px 0px 15px white;
+}
+.calc .display input{
+    width:100%;
+    height:100%;
+    background-color:transparent;
+    outline:none;
+    border:none;
+    text-align: right;
+    font-size: 2rem;
+    color:var(--keypad-color);
+}
+.calc .keys{
+    align-items: flex;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
+    width:100%;
+    border-radius: 20px;
+    height: 80%;
+    cursor: pointer;
+}
+.calc .keys button{
+    color:var(--keypad-color);
+    background-color: var(--bg-color);
+    border:none;
+    border-radius: 20px;
+    padding:10px;
+    font-size: 2rem;
+    box-shadow: 0px 0px 5px #9a73d9;
+    cursor:pointer;
+}
+.calc .keys .eqaulbut{
+    grid-column:3/5;
+    background-color:var(--keypad-color);
+    color:var(--bg-color);
+}
+.theme-toggle{
+    display:flex;
+    align-items:center;
+    justify-content: flex-end;
+}
+.theme-toggle .theme-toggle-label{
+    height: 20px;
+    width: 40px;
+    background-color: var(--keypad-color);
+    border-radius: 20px;
+}
+.theme-toggle input{
+   display:none;
+}
+.theme-toggle-label:after{
+    content: ' ';
+    position: absolute;
+    height: 19px;
+    width:19px;
+    border-radius:50%;
+    background-color:var(--bg-color);
+    
+}
+.theme-toggle input:checked+.theme-toggle-label:after{
+    transform:translateX(20px);
+}
+
